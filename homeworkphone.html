@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phone Calculator</title>
+	<style type="text/css">
+		body{
+			display:flex;
+			justify-content: center;
+			align-items:center;
+			height:100vh;
+		}
+		.container{
+			background-color:rgba(105,105,105,1);
+			width:213px;
+			height:310px;
+			border:solid 1px #696969;
+			border-radius:20px;
+
+
+		}
+	 input,button{
+			border:solid 1px rgba(	139,69,19,0.1);
+             border-radius:20px;
+			width:50px;
+			height:50px;
+			justify-content: center;
+			color:black;
+			background-color:white;
+			background-color: #DDA0DD;
+			
+		}
+		#text{
+			width:2o5px;
+			background-color:rgba(105,105,105,0.8);
+
+		}
+		.calculate{
+			width:100px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+		
+		
+		
+		
+	
+		<input type="text" name="text" class="" id="text"/>
+		<!--  -->
+		<br/> 
+		<button type="button" id="del" class="" onclick="deleteall()">AC</button>
+		 <button type="button" id="mod" onclick="sign('%')">%</button>
+		 <button type="button" id="del" class="" onclick="delete1()">C</button>
+		 <button type="button" id="div" onclick="sign('/')">/</button>
+		 <br/>
+		
+ 		
+		 <input type="button" name="" class="" id="num7" onclick="no(7)" value="7"/> 
+		<input type="button" name="" class="" id="num8"  onclick="no(8)" value="8"/>
+
+		
+		<input type="button" name="" class="" id="num9" value="9" onclick="no(9)" />
+		<button type="button" id="add"  onclick="sign('*')">x</button>
+		<br/>
+		<input type="button" name="" class="" id="num4" value="4" onclick="no(4)" />
+		<input type="button" name="" class="" id="num5" value="5" onclick="no(5)" />
+		
+		<input type="button" name="" class="" id="num6" value="6" onclick="no(6)" />
+		<button type="button" id="sub" onclick="sign('-')">-</button>
+		<br/>
+		<input type="button" name="" class="" id="num1" value="1" onclick="no(1)" />
+		<input type="button" name="" class="" id="num2" value="2" onclick="no(2)" />
+		
+		<input type="button" name="" class="" id="num3" value="3" onclick="no(3)" />
+		<button type="button" id="mul" onclick="sign('+')">+</button>
+		<br/>
+		<input type="button" name="" class="" id="num0" value="0" onclick="no(0)" />
+		<button type="button" id="dec" onclick="sign('.')">.</button>
+			
+		   
+		
+	<!-- 	<button type="button" id="del">x</button> -->
+		<input type="button" name="" id="cal"  class="calculate" value="="  onclick="calculate()"/>
+
+
+	</div>
+	<script type="text/javascript">
+		var  firstnumber;
+		var secondnumber;
+		
+		
+		
+		var signbtn;
+		function sign(sign){
+			//console.log('hay i am sign'+sign);
+			//document.querySelectorAll('button').value=sign;
+			document.getElementById('text').value+=sign;
+			signbtn=document.getElementById('text').value;
+		console.log(sign);
+		
+		}
+
+		
+		
+
+function no(num){
+			
+	
+document.getElementById('text').value+=num;
+
+firstnumber=document.getElementById('text').value;
+
+
+		
+
+			
+		
+		// console.log(firstnumber);
+		// console.log(secondnumber);
+		//  	console.log(typeof firstnumber);
+		  
+		}
+		let getresult;
+		 function calculate(){
+		 	let  getresult=document.getElementById('text').value;
+		 	document.getElementById('text').value=eval(getresult);
+
+
+		 	// let num1=Number(document.getElementById('firstnumber').value),
+			 // num2=Number(document.getElementById('secondnumber').value);
+		 	// let result;
+		 	// // let signbtn=document.getElementById('text').value;
+
+		 	// let number1=+(firstnumber);
+		 	//  console.log(number1);
+		 	// console.log(typeof number1);
+		 	//let number2=+(secondnumber);
+		 	// console.log(number2);
+		 	// console.log(typeof number2);
+		 	//console.log(signbtn);
+		 
+
+
+		}
+
+		 function deleteall(){
+		 	
+		 	//if(document.getElementById('text').value==eval(getresult))
+		 	document.getElementById('text').value=" ";
+		 	console.log('i am del tag');
+		 }
+
+
+		 	function delete1(){
+		 		let deletevalue=document.getElementById('text').value;
+		 		if(deletevalue.length==1)
+{
+	document.getElementById('text').value=" ";
+}
+else{
+	document.getElementById('text').value=deletevalue.substring(0,deletevalue.length-1);
+}
+		 	}
+
+		//  else{
+		// 	document.getElementById('text').value=deletevalue.substring(deletevalue[]," ");
+		// 	console.log(deletevalue[]);
+		// }
+
+			
+		 
+
+		
+
+
+
+
+
+
+		// click();
+		
+	</script>
+
+</body>
+</html>
